@@ -1,3 +1,22 @@
-set ANT_HOME=C:\Program Files\Java\jdk1.8.0_45
-set JAVA_HOME=C:\ToInstall_apache_ant_1.9.5\apache-ant-1.9.5-bin
+set ANT_HOME=C:\ToInstall_apache_ant_1.9.5\apache-ant-1.9.5-binC
+set JAVA_HOME=:\Program Files\Java\jdk1.8.0_45
 set PATH=%PATH%;%ANT_HOME%\bin
+
+En realidad lo mas facil es mejor instalar winAnt
+y hay que recordar que para ejecutar el programa desde la 
+linea de comandos se debe definir la variable java.library.path
+como la ruta en donde se encuentra la biblioteca (.so o dll)
+
+$cd Build/classes
+$java -Djava.library.path=/ruta/a/la/biblioteca nombre.calified.de.clase
+
+Para ejecutar en el Netbeans de debe agregar en el menu
+run
+   \set project configuration
+                             \customize
+
+donde dice run, en VM option escribir
+-Djava.library.path=rutaparala_biblioteca.dll
+
+o bien en linux
+-Djava.library.path=rutaparala_libbiblioteca.so
