@@ -1,0 +1,3 @@
+EXPORTS
+    Java_jnimathclient_JNIMathClient_addTwoNumbers @1
+    Java_jnimathclient_JNIMathClient_multiplyTwoNumbers @2
