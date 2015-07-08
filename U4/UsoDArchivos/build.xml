@@ -1,6 +1,6 @@
 <project name="WorkingWithFiles" basedir="." default="main">
 
-    <property name="src.dir"     value="pkgroot"/>
+    <property name="src.dir"     value="eclipseproject01/pkgroot"/>
 
     <property name="build.dir"   value="eclipseproject01/Bin"/>
     <property name="classes.dir" value="${build.dir}/classes"/>

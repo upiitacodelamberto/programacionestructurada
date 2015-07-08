@@ -14,18 +14,39 @@ public class MyTextEditor {
 	Frame F;
 	MenuBar MB;
 	Menu M;
-	MenuItem MI;
+	MenuItem MIN;	/* MenuItem Nuevo */
+	MenuItem MIA;	/* MenuItem Abrir */
+	MenuItem MIC;	/* MenuItem Cerrar */
 	Dimension D;
+	
+	public native void sobrescribir(String S);
+//	static{
+//		System.loadLibrary("BDArchivos");
+//	}
 	public MyTextEditor(){
 		F=new Frame("MyTextEditor");
 		F.setMenuBar(MB=new MenuBar());
 		MB.add(M=new Menu("Archivo"));
-		M.add(MI=new MenuItem("Abrir"));
+		M.add(MIN=new MenuItem("Nuevo Archivo"));
+		M.add(MIA=new MenuItem("Abrir Archivo"));
+		M.add(MIC=new MenuItem("Cerrar Archivo"));
 		
 		F.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we){
 				int confirm=JOptionPane.showConfirmDialog(null, "MyTextEditor se va a cerrar. "
-						+ "Desea guardar los cambios en el archivo?");
+						+ "Desea guardar los cambios en el archivo?");/* Si=0, No=1, Cancelar=2*/
+				//System.out.println("confirm="+confirm);
+				switch(confirm){
+				case 0:{/* aqui, llamar a sobrescribir pasando el string que tenemos en el TextArea */
+					
+				}
+				case 1:{
+					
+				}
+				case 2:{
+					
+				}
+				}
 				F.dispose();
 			}
 		});
