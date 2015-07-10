@@ -5,12 +5,14 @@ import java.awt.Frame;
 import java.awt.Menu;
 import java.awt.MenuBar;
 import java.awt.MenuItem;
+import java.awt.event.ActionListener;//PASO 1/5
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.ActionEvent;//PASO 1/5
 
 import javax.swing.JOptionPane;
 
-public class MyTextEditor {
+public class MyTextEditor implements ActionListener{//PASO 2/5
 	Frame F;
 	MenuBar MB;
 	Menu M;
@@ -19,18 +21,20 @@ public class MyTextEditor {
 	MenuItem MIC;	/* MenuItem Cerrar */
 	Dimension D;
 	
-	public native void sobrescribir(String S);
-//	static{
-//		System.loadLibrary("BDArchivos");
-//	}
+	public native void crearArchivo();
+	//public native void sobrescribir(String S);
+	static{
+		System.loadLibrary("BDArchivos");
+	}
 	public MyTextEditor(){
 		F=new Frame("MyTextEditor");
 		F.setMenuBar(MB=new MenuBar());
 		MB.add(M=new Menu("Archivo"));
-		M.add(MIN=new MenuItem("Nuevo Archivo"));
+		M.add(MIN=new MenuItem("Nuevo Archivo"));/* a MIN le tenemos que asignar un escucha */
 		M.add(MIA=new MenuItem("Abrir Archivo"));
 		M.add(MIC=new MenuItem("Cerrar Archivo"));
 		
+		MIN.addActionListener(this);//PASO 3/5
 		F.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we){
 				int confirm=JOptionPane.showConfirmDialog(null, "MyTextEditor se va a cerrar. "
@@ -54,6 +58,12 @@ public class MyTextEditor {
 		F.setSize(D);
 		F.setLocationRelativeTo(null);
 		F.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent ae){//PASO 4/5
+		MyTextEditor MTE=new MyTextEditor();
+		if(ae.getActionCommand().equals("Nuevo Archivo")){
+			MTE.crearArchivo();
+		}
 	}
 	public static void main(String[] args) {
 		new MyTextEditor();
