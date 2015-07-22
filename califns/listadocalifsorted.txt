@@ -1,0 +1,20 @@
+\begin{center}
+\begin{tabular}{lr}
+De La Fuente Alejandra	&5\\
+Flores Gerardo		&5\\
+Flores Gustavo		&10\\
+Flores Saul		&5\\
+Gomez Evelin		&5\\
+Guerrero Paula		&7\\
+Lardizabal Mauricio	&10\\
+Medina Aline		&5\\
+Mendoza Cassandra	&5\\
+Miranda Romero Lisset	&5\\
+Ordu\~{n}a Osiris	&5\\
+Ramirez Najera Jose Ivar&	5\\
+Ricaud Abraham		&5\\
+Santillan Brenda	&6\\
+Zaragoza Salvador	&10\\
+Zempoalteca Daniel	&5
+\end{tabular}
+\end{center}
